@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bill Keith Banjo Workshop</title>
+<meta name="description" content="A replay of Bill Keith's online banjo workshop at the Banjo Lounge, October 17, 2006: the full audio with synchronized slides, whiteboard and chat, plus the handouts.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='12' r='10' fill='%23f3ead8' stroke='%237a3e1d' stroke-width='3'/%3E%3Crect x='14' y='20' width='4' height='11' fill='%237a3e1d'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" id="top">
+      <span class="brand-title">Bill Keith Banjo Workshop</span>
+      <span class="brand-sub">Banjo Lounge online workshop · October 17, 2006</span>
+    </a>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#session">Session</a>
+      <a href="#handouts">Handouts</a>
+      <a href="#tabs">Tab sheets</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="session" class="wrap session" aria-label="Workshop replay">
+    <div class="player">
+      <div class="stage-frame">
+        <div class="stage" id="stage">
+          <div class="title-card" id="titleCard">
+            <p class="eyebrow">Welcome to the Banjo Lounge Online Workshop with</p>
+            <h1>Bill Keith</h1>
+            <p class="title-card-note">Live audio, slides, whiteboard and chat, recorded October 17, 2006.<br>Press play to start the replay.</p>
+          </div>
+          <div class="board-blank" id="boardBlank" hidden>Whiteboard cleared</div>
+          <svg id="board" class="board" hidden xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Current slide">
+            <rect id="boardBg" fill="#fff" />
+            <image id="boardImg" x="0" y="0" />
+            <g id="ink" fill="none" stroke="#c8261d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></g>
+          </svg>
+        </div>
+        <div class="stage-meta">
+          <span class="chapter-now" id="chapterNow">Welcome &amp; sound check</span>
+          <span class="mic" id="mic" title="Who held the microphone"><span class="mic-dot" aria-hidden="true"></span><span id="micName">Bill Keith</span></span>
+        </div>
+      </div>
+
+      <div class="transport" role="group" aria-label="Playback controls">
+        <button class="btn btn-play" id="playBtn" aria-label="Play">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-play" d="M8 5v14l11-7z"/><path class="i-pause" d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+        </button>
+        <button class="btn" id="backBtn" aria-label="Back 15 seconds" title="Back 15 s (←)">−15</button>
+        <button class="btn" id="fwdBtn" aria-label="Forward 15 seconds" title="Forward 15 s (→)">+15</button>
+        <div class="scrub">
+          <div class="scrub-track">
+            <div class="scrub-fill" id="scrubFill"></div>
+            <div class="scrub-marks" id="scrubMarks"></div>
+          </div>
+          <input type="range" id="scrub" min="0" max="10744" step="0.1" value="0" aria-label="Seek">
+        </div>
+        <span class="time" id="time"><span id="cur">0:00:00</span> / <span id="dur">2:59:04</span></span>
+        <label class="speed" title="Playback speed">
+          <span class="visually-hidden">Speed</span>
+          <select id="speed">
+            <option value="0.75">0.75×</option>
+            <option value="1" selected>1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+          </select>
+        </label>
+      </div>
+      <audio id="audio" src="media/workshop.mp3" preload="metadata"></audio>
+
+      <details class="chapters" open>
+        <summary>Chapters</summary>
+        <ol id="chapterList"></ol>
+      </details>
+    </div>
+
+    <aside class="chat" aria-label="Chat room">
+      <div class="chat-head">
+        <h2>Chat room</h2>
+        <label class="toggle"><input type="checkbox" id="spoilers"> Show messages ahead</label>
+      </div>
+      <ol class="chat-log" id="chatLog" aria-live="off"></ol>
+      <button class="follow" id="followBtn" hidden>Jump to now ↓</button>
+    </aside>
+  </section>
+
+  <section id="handouts" class="wrap section" aria-labelledby="handouts-h">
+    <div class="section-head">
+      <h2 id="handouts-h">Workshop handouts</h2>
+      <a class="btn btn-solid" href="handouts/bill-keith-workshop-handouts.pdf" download>Download all 10 pages (PDF, 4 MB)</a>
+    </div>
+    <p class="lede">The handwritten tab pages sent to participants before the workshop. Click a page to enlarge it.</p>
+    <ul class="gallery gallery-pages" id="handoutGallery"></ul>
+  </section>
+
+  <section id="tabs" class="wrap section" aria-labelledby="tabs-h">
+    <div class="section-head"><h2 id="tabs-h">Tab sheets</h2></div>
+    <p class="lede">Higher-resolution scans of the individual exercises shown on the whiteboard during the session.</p>
+    <ul class="gallery gallery-tabs" id="tabGallery"></ul>
+  </section>
+
+  <section id="about" class="wrap section about" aria-labelledby="about-h">
+    <h2 id="about-h">About this recording</h2>
+    <div class="about-cols">
+      <div>
+        <p>On October 17, 2006, banjo innovator <strong>Bill Keith</strong> (1939–2015) taught a three-hour online workshop for members of the <em>Banjo Lounge</em>, a banjo community that met in an iVocalize voice-chat room. Bill talked and played over the room's live audio, put handwritten tab on a shared whiteboard, and answered questions from the text chat.</p>
+        <p>The session covered right-hand roll patterns (forward, backward, reverse and Foggy Mountain rolls), thumb, middle and index leads, major and pentatonic scales, the modes of the G scale and the chords built on them, the D7 tritone, and the circle of fifths.</p>
+      </div>
+      <div>
+        <p>The room's software saved the session as a Java-applet replay, which modern browsers can no longer run. This page rebuilds it from the original recording file: the audio, all 14 slide changes, the whiteboard drawings and the 397 chat messages, each at the moment it happened.</p>
+        <p>The recorder only captured audio while someone was speaking, so silences, including the intermission, are shortened. Chat and slides stay in sync with the audio throughout.</p>
+      </div>
+    </div>
+    <p class="keys"><strong>Keyboard:</strong> <kbd>Space</kbd> play/pause · <kbd>←</kbd> <kbd>→</kbd> skip 15 s. Add <code>?t=</code> and a number of seconds to the address to link to a moment.</p>
+  </section>
+</main>
+
+<footer class="site-footer wrap">
+  <p>Recorded October 17, 2006 in the Banjo Lounge. Restored as a static web page in 2026.</p>
+</footer>
+
+<dialog class="lightbox" id="lightbox">
+  <form method="dialog"><button class="lightbox-close" aria-label="Close">×</button></form>
+  <img id="lightboxImg" alt="">
+  <p id="lightboxCap"></p>
+</dialog>
+
+<script src="data/session.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
